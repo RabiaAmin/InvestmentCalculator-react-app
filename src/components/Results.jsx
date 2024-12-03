@@ -1,10 +1,24 @@
 import React from 'react'
 import {calculateInvestmentResults,formatter} from "../util/investment"
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
 
 export const Results = ({userInput}) => {
     const resultsData = calculateInvestmentResults(userInput);
     const totalInvestment = resultsData[0].valueEndOfYear - resultsData[0].interest - resultsData[0].annualInvestment;
-  return (
+ 
+ 
+    useGSAP(()=>{
+      gsap.from("#result-div",{
+      x: 1200,
+      duration: 2,
+      delay:0.5,
+     
+      });
+  
+    });
+    return (
+    <div id='result-div' className='h-[94vh] w-[40vw] overflow-hidden rounded-md  border-[#307F6C] border-2 ml-0 mt-4 mr-4 mb-2'>
     <table id='result'>
        <thead>
         <tr>
@@ -32,5 +46,7 @@ export const Results = ({userInput}) => {
         }
        </tbody>
     </table>
+
+    </div>
   )
 }

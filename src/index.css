@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
 * {
@@ -7,6 +14,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: radial-gradient(#303b37, #1a1f1d);
@@ -14,42 +23,25 @@ body {
   min-height: 100vh;
 }
 
-#header {
-  text-align: center;
-  margin: 3rem auto;
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 
-#header img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  background-color: transparent;
-}
 
-#header h1 {
-  font-size: 1.5rem;
-}
 
-#user-input {
-  padding: 1rem;
-  max-width: 30rem;
-  margin: 2rem auto;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
-}
 
-.input-group {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1.5rem;
-}
+
+
+
+
+
 
 #user-input label {
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -62,6 +54,7 @@ body {
   background-color: transparent;
   color: #c2e9e0;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 #result {
